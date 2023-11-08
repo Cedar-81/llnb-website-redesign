@@ -3,6 +3,31 @@
 	import frame1 from '$lib/assets/p_frame1.png';
 	import frame2 from '$lib/assets/p_frame2.png';
 	import frame3 from '$lib/assets/p_frame3.png';
+	import { gsap } from 'gsap/dist/gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		gsap.registerPlugin(ScrollTrigger);
+		let tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.practice',
+				toggleActions: 'restart pause restart pause'
+			}
+		});
+		tl.from('.practice-section-title', { duration: 0.7, opacity: 0.2 })
+			.from('.practice-title', {
+				duration: 0.8,
+				opacity: 0,
+				top: -50
+			})
+			.from('.card', {
+				duration: 0.5,
+				opacity: 0,
+				yPercent: 70,
+				stagger: 0.8
+			});
+	});
 
 	const practice_card_items = [
 		{
@@ -32,16 +57,16 @@
 	];
 </script>
 
-<section class=" space-y-20">
+<section class=" space-y-20 practice">
 	<div class="space-y-5 text-center">
-		<h3 class="font-medium text-brand">OUR PRACTICE</h3>
-		<h4 class="text-xl font-semibold">
+		<h3 class="font-medium text-brand practice-section-title">OUR PRACTICE</h3>
+		<h4 class="text-xl font-semibold practice-title">
 			We pride ourselves with very talented attorneys and consultants in the following areas.
 		</h4>
 	</div>
 
 	<div
-		class="grid grid-cols-1 lg:grid-cols-4 place-items-center space-y-8 lg:space-y-0 lg:space-x-3"
+		class="grid grid-cols-1 lg:grid-cols-4 place-items-center space-y-8 lg:space-y-0 lg:space-x-3 cards"
 	>
 		{#each practice_card_items as { title, content, img }}
 			<PracticeCard {title} {content} {img} />

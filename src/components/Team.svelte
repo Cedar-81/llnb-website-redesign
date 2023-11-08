@@ -6,6 +6,31 @@
 	import frame5 from '$lib/assets/t_frame5.png';
 	import frame6 from '$lib/assets/t_frame6.png';
 	import TeamCard from './TeamCard.svelte';
+	import { gsap } from 'gsap/dist/gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		gsap.registerPlugin(ScrollTrigger);
+		let tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.team',
+				toggleActions: 'restart pause restart pause'
+			}
+		});
+		tl.from('.team-section-title', { duration: 0.7, opacity: 0.2 })
+			.from('.team-title', {
+				duration: 0.8,
+				opacity: 0,
+				top: -50
+			})
+			.from('.team-card', {
+				duration: 0.5,
+				opacity: 0,
+				xPercent: 70,
+				stagger: 0.8
+			});
+	});
 
 	const team_card_items = [
 		{
@@ -47,10 +72,10 @@
 	];
 </script>
 
-<section class="  space-y-20">
+<section class="  space-y-20 team">
 	<div class="space-y-5">
-		<h3 class="font-medium text-brand">OUR TEAM</h3>
-		<h4 class="text-xl font-semibold">Experts in position.</h4>
+		<h3 class="font-medium text-brand team-section-title">OUR TEAM</h3>
+		<h4 class="text-xl font-semibold team-title">Experts in position.</h4>
 	</div>
 
 	<div class="grid grid-cols-2 lg:grid-cols-6 border-2">

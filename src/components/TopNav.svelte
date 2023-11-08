@@ -1,6 +1,7 @@
 <script>
 	import logo from '$lib/assets/logo.png';
 	import Icon from '@iconify/svelte';
+
 	let activeIndex = 0;
 	let show_mobile_nav = false;
 </script>
@@ -10,9 +11,21 @@
 		<img class="h-full w-full object-cover" src={logo} alt="llnb logo" />
 	</div>
 
-	<button on:click={() => (show_mobile_nav = !show_mobile_nav)}>
+	<button class="lg:hidden" on:click={() => (show_mobile_nav = !show_mobile_nav)}>
 		<Icon icon="basil:menu-solid" class="lg:hidden h-10 w-10" />
 	</button>
+
+	<ul class="flex bg-bg-lighter top-0 items-center space-y-0 space-x-6">
+		<button class=" font-medium" class:active={activeIndex == 0} on:click={() => (activeIndex = 0)}>
+			<li>HOME</li>
+		</button>
+		<button class=" font-medium" class:active={activeIndex == 1} on:click={() => (activeIndex = 1)}>
+			<li>OUR TEAM</li>
+		</button>
+		<button class=" font-medium" class:active={activeIndex == 2} on:click={() => (activeIndex = 2)}>
+			<li>PRACTICE AREA</li>
+		</button>
+	</ul>
 
 	<ul
 		class:hidden={!show_mobile_nav}
@@ -46,7 +59,6 @@
 		>
 	</ul>
 
-	<button class="px-4 py-2 bg-brand text-white hidden lg:block">LETS TALK</button>
 	<button class="px-4 py-2 bg-brand text-white hidden lg:block">LETS TALK</button>
 </nav>
 

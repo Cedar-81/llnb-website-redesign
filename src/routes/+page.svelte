@@ -6,7 +6,7 @@
 	import Team from '../components/Team.svelte';
 </script>
 
-<section class="space-y-[7rem] pb-10">
+<section class="space-y-[20rem] pb-10">
 	<Banner />
 	<About />
 	<Practice />

@@ -2,14 +2,18 @@
 	export let name: string;
 	export let position: string;
 	export let img: string;
+	import { fly } from 'svelte/transition';
 </script>
 
-<div class="relative group">
+<div class="relative group team-card">
 	<div class="overflow-hidden h-[20rem] w-full min-w-[8rem] bg-brand">
 		<img class="h-full w-full object-cover" src={img} alt="a man handshaking" />
 	</div>
 
-	<div class="absolute h-full w-full bg-black/60 hidden group-hover:block top-0 right-0" />
+	<div
+		class="absolute h-full w-full bg-black/60 hidden group-hover:block top-0 right-0"
+		transition:fly={{ y: -100, duration: 10000 }}
+	/>
 
 	<div class="absolute bottom-5 text-center w-full p-2 text-white space-y-2">
 		<p class="text-sm font-bold">{name}</p>

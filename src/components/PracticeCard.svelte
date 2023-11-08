@@ -2,9 +2,28 @@
 	export let title: string;
 	export let content: string;
 	export let img: string;
+	// import { gsap } from 'gsap/dist/gsap';
+	// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	// import { onMount } from 'svelte';
+
+	// onMount(() => {
+	// 	gsap.registerPlugin(ScrollTrigger);
+	// 	let tl = gsap.timeline({
+	// 		scrollTrigger: {
+	// 			trigger: '.practice',
+	// 			toggleActions: 'restart pause restart pause'
+	// 		}
+	// 	});
+	// 	tl.from('.card', {
+	// 		duration: 0.8,
+	// 		opacity: 0,
+	// 		y: 50,
+	// 		stagger: 0.8
+	// 	});
+	// });
 </script>
 
-<div class="h-[25rem] w-[18rem] bg-bg-darker/20 relative">
+<div class="h-[25rem] w-[18rem] bg-bg-darker/20 relative card">
 	<div class="overflow-hidden h-[12rem] w-full bg-brand">
 		<img class="h-full w-full object-cover" src={img} alt="a man handshaking" />
 	</div>
