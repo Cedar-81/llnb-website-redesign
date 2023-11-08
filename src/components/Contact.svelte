@@ -1,16 +1,46 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import ContactForm from './ContactForm.svelte';
+	import { gsap } from 'gsap/dist/gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		gsap.registerPlugin(ScrollTrigger);
+		let tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.contact',
+				toggleActions: 'restart pause none pause'
+			}
+		});
+		tl.from('.contact-section-title', { duration: 0.7, opacity: 0.2 })
+			.from('.contact-title', {
+				duration: 0.8,
+				opacity: 0,
+				top: -50,
+				stagger: 1
+			})
+			.from('.form-info', {
+				opacity: 0,
+				duration: 0.6,
+				height: 0
+			})
+			.from('.form', {
+				opacity: 0,
+				duration: 0.6,
+				height: 0
+			});
+	});
 </script>
 
-<section class="  space-y-20">
+<section class="  space-y-20 contact">
 	<div class="space-y-5">
-		<h3 class="font-medium text-brand">CONTACT US</h3>
-		<h4 class="text-xl font-semibold">Get in touch, let&apos;s help you.</h4>
+		<h3 class="font-medium text-brand contact-section-title">CONTACT US</h3>
+		<h4 class="text-xl font-semibold contact-title">Get in touch, let&apos;s help you.</h4>
 	</div>
 
-	<div class="lg:flex px-10 gap-x-10 space-y-8 lg:space-y-0">
-		<div class="space-y-10 bg-bg-darker/20 p-6 font-light">
+	<div class="lg:flex lg:px-10 gap-x-10 space-y-8 lg:space-y-0">
+		<div class="space-y-10 bg-bg-darker/20 p-6 font-light form-info">
 			<p class="font-bold">
 				For enquiries, please fill out the form below and we will reach you shortly.
 			</p>
@@ -53,6 +83,8 @@
 			</div>
 		</div>
 
-		<ContactForm />
+		<div class="form lg:w-[60%]">
+			<ContactForm />
+		</div>
 	</div>
 </section>

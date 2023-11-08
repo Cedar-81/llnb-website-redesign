@@ -1,4 +1,5 @@
-<form class="flex flex-col justify-between space-y-8 lg:w-[60%]">
+<form class="flex flex-col justify-between space-y-8">
+	<!-- <h3 class="text-lg font-medium">Leave us a mail.</h3> -->
 	<div class="grid grid-cols-2 gap-6">
 		<div class="flex flex-col">
 			<label for="firstname"> Firstname </label>

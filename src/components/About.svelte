@@ -8,7 +8,7 @@
 		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.about',
-				toggleActions: 'restart pause restart pause'
+				toggleActions: 'restart pause none pause'
 			}
 		});
 		tl.from('.about-section-title', { duration: 0.7, opacity: 0.2 })

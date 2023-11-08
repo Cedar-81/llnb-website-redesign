@@ -15,7 +15,7 @@
 		<Icon icon="basil:menu-solid" class="lg:hidden h-10 w-10" />
 	</button>
 
-	<ul class="flex bg-bg-lighter top-0 items-center space-y-0 space-x-6">
+	<ul class="hidden lg:flex bg-bg-lighter top-0 items-center space-y-0 space-x-6">
 		<button class=" font-medium" class:active={activeIndex == 0} on:click={() => (activeIndex = 0)}>
 			<li>HOME</li>
 		</button>
