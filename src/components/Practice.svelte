@@ -3,6 +3,7 @@
 	import frame1 from '$lib/assets/p_frame1.png';
 	import frame2 from '$lib/assets/p_frame2.png';
 	import frame3 from '$lib/assets/p_frame3.png';
+	import frame4 from '$lib/assets/p_frame4.png';
 	import { gsap } from 'gsap/dist/gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
@@ -12,7 +13,7 @@
 		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.practice',
-				toggleActions: 'restart pause restart pause'
+				toggleActions: 'restart none none none'
 			}
 		});
 		tl.from('.practice-section-title', { duration: 0.7, opacity: 0.2 })
@@ -50,9 +51,10 @@
 		},
 		{
 			id: 3,
-			title: 'Last item',
-			content: 'Our firm believes that the most effective and efficient way to settle...',
-			img: frame3
+			title: 'CORPORATE PRACTICE',
+			content:
+				'Our firm has extensive experience in modern corporate transactions. We offer advice on compliance with...',
+			img: frame4
 		}
 	];
 </script>
@@ -66,7 +68,7 @@
 	</div>
 
 	<div
-		class="grid grid-cols-1 lg:grid-cols-4 place-items-center space-y-8 lg:space-y-0 lg:space-x-3 cards"
+		class="grid grid-cols-1 overflow-hidden lg:grid-cols-4 place-items-center space-y-8 lg:space-y-0 lg:space-x-3 cards"
 	>
 		{#each practice_card_items as { title, content, img }}
 			<PracticeCard {title} {content} {img} />

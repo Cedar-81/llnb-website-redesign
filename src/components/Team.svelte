@@ -15,7 +15,7 @@
 		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.team',
-				toggleActions: 'restart pause restart pause'
+				toggleActions: 'restart none none none'
 			}
 		});
 		tl.from('.team-section-title', { duration: 0.7, opacity: 0.2 })

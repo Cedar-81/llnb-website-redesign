@@ -10,7 +10,7 @@
 		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.contact',
-				toggleActions: 'restart pause none pause'
+				toggleActions: 'restart none none none'
 			}
 		});
 		tl.from('.contact-section-title', { duration: 0.7, opacity: 0.2 })
@@ -40,7 +40,7 @@
 	</div>
 
 	<div class="lg:flex lg:px-10 gap-x-10 space-y-8 lg:space-y-0">
-		<div class="space-y-10 bg-bg-darker/20 p-6 font-light form-info">
+		<div class="space-y-10 bg-bg-darker/20 p-6 font-light form-info overflow-hidden">
 			<p class="font-bold">
 				For enquiries, please fill out the form below and we will reach you shortly.
 			</p>
@@ -83,7 +83,7 @@
 			</div>
 		</div>
 
-		<div class="form lg:w-[60%]">
+		<div class="form lg:w-[60%] overflow-hidden">
 			<ContactForm />
 		</div>
 	</div>

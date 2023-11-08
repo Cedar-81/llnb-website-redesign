@@ -29,7 +29,7 @@
 
 	<ul
 		class:hidden={!show_mobile_nav}
-		class="flex bg-bg-lighter text-lg fixed top-0 left-0 w-[90vw] h-[100vh] flex-col lg:flex-row items-start p-6 lg:items-center space-y-5 lg:space-y-0 lg:space-x-6"
+		class="flex bg-bg-lighter text-lg fixed top-0 left-0 w-[90vw] h-full max-h-full flex-col lg:flex-row items-start p-6 lg:items-center space-y-5 lg:space-y-0 lg:space-x-6"
 	>
 		<button
 			class="py-3 px-4 lg:py-0 border-2 w-full text-left lg:w-max lg:text-center lg:px-0 font-medium"

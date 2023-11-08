@@ -31,16 +31,18 @@
 <section class="lg:flex relative lg:h-[78vh] items-center mt-6 space-y-20 lg:space-y-0 banner">
 	<div class="lg:w-[60%] space-y-8">
 		<div class="space-y-4">
-			<h1 class="text-4xl lg:text-6xl cta">
+			<h1 class="text-4xl lg:text-6xl cta overflow-hidden">
 				We pride on being <span class="text-brand">Your Legal Compass</span>
 			</h1>
 			<h2 class="text-xl cta-subtext">Delivering legal excellence with decades of experience</h2>
 		</div>
-		<button class="px-6 py-4 bg-black text-brand text-lg cta-btn">Get in touch</button>
+		<button class="px-6 py-4 bg-black text-brand text-lg cta-btn overflow-hidden"
+			>Get in touch</button
+		>
 	</div>
 
 	<div class="flex items-center lg:absolute right-0 w-full lg:w-max justify-center lg:block">
-		<div class="w-max flex items-center gap-3">
+		<div class="w-max flex items-center gap-3 overflow-hidden">
 			<div class="overflow-hidden h-[45vh] w-24 lg:h-[70vh] lg:w-40 bg-brand frame1">
 				<img class="h-full w-full object-cover" src={frame1} alt="a man handshaking" />
 			</div>
