@@ -68,7 +68,7 @@
 	</div>
 
 	<div
-		class="grid grid-cols-1 overflow-hidden lg:grid-cols-4 place-items-center space-y-8 lg:space-y-0 lg:space-x-3 cards"
+		class="grid grid-cols-1 overflow-hidden lg:grid-cols-3 xl:grid-cols-4 place-items-center space-y-8 lg:space-x-3 cards"
 	>
 		{#each practice_card_items as { title, content, img }}
 			<PracticeCard {title} {content} {img} />

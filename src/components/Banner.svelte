@@ -31,10 +31,12 @@
 <section class="lg:flex relative lg:h-[78vh] items-center mt-6 space-y-20 lg:space-y-0 banner">
 	<div class="lg:w-[60%] space-y-8">
 		<div class="space-y-4">
-			<h1 class="text-4xl lg:text-6xl cta overflow-hidden">
+			<h1 class="text-4xl lg:5xl xl:text-6xl cta overflow-hidden relative z-10">
 				We pride on being <span class="text-brand">Your Legal Compass</span>
 			</h1>
-			<h2 class="text-xl cta-subtext">Delivering legal excellence with decades of experience</h2>
+			<h2 class="text-xl cta-subtext relative z-10">
+				Delivering legal excellence with decades of experience
+			</h2>
 		</div>
 		<button class="px-6 py-4 bg-black text-brand text-lg cta-btn overflow-hidden"
 			>Get in touch</button
